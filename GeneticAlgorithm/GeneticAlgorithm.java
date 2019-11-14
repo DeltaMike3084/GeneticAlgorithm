@@ -1,7 +1,7 @@
 package GeneticAlgorithm;
 
-import GeneticAlgorithm.Chromosome.Chromosome;
 import GeneticAlgorithm.Chromosome.ChromosomeFactory;
+import GeneticAlgorithm.Population.Population;
 
 public class GeneticAlgorithm {
     ChromosomeFactory chromosomeFactory;
@@ -43,6 +43,7 @@ public class GeneticAlgorithm {
         } while (!terminate);
 
         // Report best solution or most recently calculated solutions
+        // Observer pattern implemented here?
         currentGeneration.getBest();
     }
 
