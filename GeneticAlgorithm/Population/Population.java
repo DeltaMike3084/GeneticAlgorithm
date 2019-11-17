@@ -1,41 +1,29 @@
 package GeneticAlgorithm.Population;
 
 import GeneticAlgorithm.Chromosome.Chromosome;
-import GeneticAlgorithm.Chromosome.ChromosomeFactory;
 import GeneticAlgorithm.Genome;
 
 import java.util.ArrayList;
 
 public class Population {
-    ArrayList<Chromosome> population;
-    Genome genome;
+    private ArrayList<Chromosome> individuals;
+    private Genome genome;
+    long bestfitness;
 
-    public Population(ChromosomeFactory chromosomeFactory) {
+    public Population() {
+        this.individuals = new ArrayList<Chromosome>();
     }
 
-    public Population(ChromosomeFactory chromosomeFactory, Population basePopulation) {
-        // build a new population from another population?
-
+    public void addIndividual(Chromosome newIndividual) {
+        individuals.add(newIndividual);
     }
 
-    public Chromosome getBest() {
-        // This method should probably return a string or something more readable than
-        //  a chromosome object
-        return this.population.get(0);
+    public void addMany(ArrayList<Chromosome> newIndividuals) {
+        individuals.addAll(newIndividuals);
     }
 
-    public void rankBest() {
-        // do some cool sorting algorithms here
-        // this method could be tricky actually, some implementations of GA determine
-        //  lower values to be more fit and others use higher values as more fit
-        // example: maximizing a 32 binary number (higher value more fit)
-        // example: Travelling salesman problem (fewest miles traveled more fit)
-    }
-
-    public Population getBestSubset() {
-        // this should probably accept a parameter to help decide what size the subset
-        //  ought to be
-        return this;
+    public int getPopulationSize() {
+        return individuals.size();
     }
 
 }
