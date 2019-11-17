@@ -2,6 +2,8 @@ package GeneticAlgorithm;
 
 import GeneticAlgorithm.Chromosome.Chromosome;
 import GeneticAlgorithm.Chromosome.ChromosomeExNihilo;
+import GeneticAlgorithm.PubSub.GeneticAlgorithmStats;
+import GeneticAlgorithm.PubSub.StatsDisplay;
 import GeneticAlgorithm.Selector.Selector;
 
 import java.util.ArrayList;
@@ -57,6 +59,9 @@ public abstract class GeneticAlgorithm {
     }
 
     public final void execute() {
+    	GeneticAlgorithmStats geneticAlgorithmStats = new GeneticAlgorithmStats();
+    	StatsDisplay statsDisplay = new StatsDisplay(geneticAlgorithmStats);
+    	
         // templated method
         evaluateFitness();
 
@@ -74,14 +79,17 @@ public abstract class GeneticAlgorithm {
 
             // Evaluate the fitness value of the newly generated solutions
             evaluateFitness();
+            
+           
 
         } while (isTerminationCriteriaMet());
 
         // Report best solution or most recently calculated solutions
         // Need to implement Observer pattern here
         //currentGeneration.getBest();
-        System.out.println(previousGeneration.get(0).getGeneSequence());
-        System.out.printf("%.9f", previousGeneration.get(0).getFitnessValue());
+        geneticAlgorithmStats.setStatistics(previousGeneration.get(0).getGeneSequence(), 
+        		previousGeneration.get(0).getFitnessValue());
+ 
     }
 
 //    private void evaluateFitness(ArrayList<Chromosome> currentGeneration) {

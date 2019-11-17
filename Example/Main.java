@@ -1,4 +1,4 @@
-package com.company;
+package Example;
 
 import GeneticAlgorithm.MaxFitnessGA;
 

@@ -1,0 +1,10 @@
+/Command.class
+/FitnessFunction.class
+/GeneticAlgorithm.class
+/Genome.class
+/MaxFitnessGA.class
+/MaximizeFitnessCommand.class
+/MinimizeFitnessCommand.class
+/SortByMaxFitness.class
+/SortByMinFitness.class
+/TerminationCriteria.class
