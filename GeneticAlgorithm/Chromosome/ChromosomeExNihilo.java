@@ -21,7 +21,7 @@ public class ChromosomeExNihilo extends Chromosome {
         ArrayList<Object> newGeneSequence = new ArrayList<>();
         int numberOfGenes = genes.size();
 
-        Random random = new Random();
+        Random random = new Random(System.currentTimeMillis());
         for (int i = 0; i < genome.getChromosomeLength(); i++)
         {
             newGeneSequence.add(genes.get(random.nextInt(numberOfGenes)));

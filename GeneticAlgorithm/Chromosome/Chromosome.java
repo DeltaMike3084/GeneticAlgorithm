@@ -4,12 +4,13 @@ import GeneticAlgorithm.Genome;
 
 import java.util.ArrayList;
 import java.util.BitSet;
+import java.util.Comparator;
 import java.util.Random;
 
-public class Chromosome implements Cloneable{
+public class Chromosome implements Cloneable {
     protected ArrayList genes;
     private int length;
-    private int fitnessValue;
+    private float fitnessValue;
     private boolean hasAncestor;
 
     public Chromosome (Chromosome chromosome) {
@@ -33,7 +34,7 @@ public class Chromosome implements Cloneable{
         return this.length;
     }
 
-    public int getFitnessValue() {
+    public float getFitnessValue() {
         return this.fitnessValue;
     }
 
@@ -50,7 +51,7 @@ public class Chromosome implements Cloneable{
         this.hasAncestor = doesHaveAncestor;
     }
 
-    public void setFitnessValue(int fitnessValue) {
+    public void setFitnessValue(float fitnessValue) {
         this.fitnessValue = fitnessValue;
     }
 
